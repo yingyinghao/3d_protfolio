@@ -14,20 +14,25 @@ const [toggle, setToggle] = useState("")
 
 
   return (
-<nav className = {`$styles.paddindx} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}
+<nav
+ className = {`$styles.paddindx} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}
 >
   <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-<Link to ="/" className="flex items-center gap-2" onClick = { () => {
+<Link
+to ="/"
+className="flex items-center gap-2"
+onClick = { () => {
   setActive ("")
   window.scrollTo(0,0);
 }}
 >
   <img src={logo} alt="y-icon" className="w-10 h-9 object-contain" />
-  <p className='text-white text-[18px] font-bold cursor-pointer'>Yingying <span className='sm:block hidden'> | Web Developer </span></p>
+  <p className='text-white text-[18px] font-bold cursor-pointer'>Yingying &nbsp; <span className='sm:block hidden'>| Web Developer </span></p>
   </Link>
   <ul className='list-none hidden sm:flex flex-row gap-10'>
-    {navLinks.map((link, index) => (
-      <li key = {link.id}
+    {navLinks.map((link) => (
+      <li
+      key = {link.id}
       className = {`${active === link.title ? "text-white" : "text-secondary"} hover:text-white text-[18px] font-medium cursor-pointer`}>
 
         <a href = {`#${link.id}`}>{link.title}
