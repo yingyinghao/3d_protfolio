@@ -5,6 +5,7 @@ import {OrbitControls, Preload, preload, useGITF} from '@react-three/drei'
 import CanvasLoader from '../Loader'
 import { ComputersCanvas } from '../canvas'
 
+
 const Computers = () => {
   const computer = useGLTF('/desktop_pc/scene.gltf')
 
