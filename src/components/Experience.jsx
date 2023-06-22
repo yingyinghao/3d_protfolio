@@ -8,11 +8,19 @@ import {SecitonWrapper} from '../hoc'
 import { textVariant } from '../utils/motion';
 
 
-const Experience = () => {
+const ExperienceCard = ({ experience}) => {
+  <VertivcalTimelineElement
+   contentStyle = {{background: '#1d1836', color: '#fff'}}>
+
+  {experience.date}
+
+  </VertivcalTimelineElement>
+
   return (
 <>
 <motion.div variants={textVariant()}>
   <p className = {styles.sectionSubText}>Experience</p>
+
   <h2 className={styles.sectionHeadText}>Work Experience</h2>
 </motion.div>
 
