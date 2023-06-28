@@ -1,13 +1,21 @@
 import React from 'react'
 import {Suspense} from 'react'
 import {Canvas} from '@react-three/fiber'
-import {OrbitControls, Stars} from '@react-three/drei'
+import {OrbitControls, Stars, useGLTF} from '@react-three/drei'
 import CanvasLoader from '../Loader'
 
 
 
 const Earth = () => {
+  const earth = useGLTF('/planet/earth.gltf')
+
   return (
+    <primitive
+    object = {earth.scene}
+    scale = {2.5}
+    position = {[0]}
+
+    />
     <div>Earth</div>
   )
 }
@@ -31,4 +39,4 @@ const EarthCanvas = () => {
   )
 }
 
-export default Earth
+export default EarthCanvas
