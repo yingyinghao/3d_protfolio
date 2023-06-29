@@ -6,6 +6,11 @@ import {SectionWrapper} from '../hoc'
 import { EarthCanvas } from './canvas'
 import { slideIn } from '../utils/motion'
 
+//template_axin57j
+//service_nrewvvy
+//NnF5Xx_czbSzix-8j
+
+
 
 const Contact = () => {
   const formRef = useRef()
@@ -19,11 +24,44 @@ const Contact = () => {
 
 
   const handleChange = (e) => {
+    const {target} = e;
+    const {name, value} = e.target;
+    setForm({...form, [name]: value})
+
 
   }
 
-  const handleSubmit = (e) => {
+  //template_axin57j
+//service_nrewvvy
+//NnF5Xx_czbSzix-8j
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs.send('service_nrewvvy', 'template_axin57j', {
+      from_name: form.name,
+      to_name: 'yingying',
+      from_email: form.email,
+      to_email: 'yingying.hao313@gmail.com',
+      message: form.message,
+    }, 'NnF5Xx_czbSzix-8j'
+    ) .then((response) => {
+      setLoading(false);
+      alert('Thank you. I will get back to you as soon as possible.');
+
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      })
+    },(error) => {
+      setLoading(false);
+
+      console.log(error);
+
+      alert('Something went wrong. Please try again.')
+    })
   }
 
 
