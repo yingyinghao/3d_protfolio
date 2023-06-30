@@ -28,13 +28,16 @@ onClick = { () => {
 }}
 >
   <img src={logo} alt="y-icon" className="w-9 h-9 object-contain" />
-  <p className='text-white text-[18px] font-bold cursor-pointer'>Yingying &nbsp; <span className='sm:block hidden'>| Web Developer </span></p>
+  <p className='text-white text-[18px]
+  font-bold cursor-pointer flex'>Yingying &nbsp;
+  <span className='sm:block hidden'>| Web Developer </span></p>
   </Link>
   <ul className='list-none hidden sm:flex flex-row gap-10'>
     {navLinks.map((link) => (
       <li
       key = {link.id}
-      className = {`${active === link.title ? "text-white" : "text-secondary"} hover:text-white text-[18px] font-medium cursor-pointer`}
+      className = {`${active === link.title ? "text-white" : "text-secondary"}
+      hover:text-white text-[18px] font-medium cursor-pointer`}
       onClick = {() => setActive(link.title)}>
 
         <a href = {`#${link.id}`}>{link.title}
@@ -54,8 +57,13 @@ onClick = { () => {
     {navLinks.map((link) => (
       <li
       key = {link.id}
-      className = {`${active === link.title ? "text-white" : "text-secondary"} hover:text-white text-[18px] font-medium cursor-pointer`}
-      onClick = {() => setActive(link.title)}>
+      className = {`${active === link.title ? "text-white" : "text-secondary"
+    } font-poppins font-medium cursor-pointer text-[16px]`}
+      onClick = {() => {
+      setToggle(!toggle);
+      setActive(link.title);
+    }}
+    >
 
         <a href = {`#${link.id}`}>{link.title}
         </a>
